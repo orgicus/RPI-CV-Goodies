@@ -1,3 +1,6 @@
 [submodule "ofxCvPiCam"]
 	path = ofxCvPiCam
 	url = git://github.com/orgicus/ofxCvPiCam.git
+[submodule "PiCapture"]
+	path = PiCapture
+	url = git://github.com/orgicus/PiCapture.git

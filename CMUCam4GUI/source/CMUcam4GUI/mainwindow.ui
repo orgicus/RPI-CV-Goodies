@@ -1,0 +1,4683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1035</width>
+    <height>744</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::PreventContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>CMUcam4GUI</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="CMUcam4GUI.qrc">
+    <normaloff>:/Icons/CMUcamLogo.png</normaloff>:/Icons/CMUcamLogo.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="centralLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="Viewing">
+       <attribute name="title">
+        <string>Viewing</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="viewingTabLayout">
+        <item>
+         <widget class="QGraphicsView" name="imageView">
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="imageControl">
+          <property name="title">
+           <string>Image Control</string>
+          </property>
+          <layout class="QVBoxLayout" name="imageControlLayout">
+           <item>
+            <widget class="QGroupBox" name="sendFrameControl">
+             <property name="title">
+              <string>Send Frame Control</string>
+             </property>
+             <layout class="QVBoxLayout" name="sendFrameControlLayout">
+              <item>
+               <widget class="QLabel" name="sfHResLabel">
+                <property name="text">
+                 <string>Horizontal Resolution</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="sfHResComboBox">
+                <item>
+                 <property name="text">
+                  <string>640 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>320 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>160 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>80 Pixels</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="sfVResLabel">
+                <property name="text">
+                 <string>Vertical Resolution</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="sfVResComboBox">
+                <item>
+                 <property name="text">
+                  <string>480 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>240 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>120 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>60 Pixels</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="dumpFrameControl">
+             <property name="title">
+              <string>Dump Frame Control</string>
+             </property>
+             <layout class="QVBoxLayout" name="dumpFrameControlLayout">
+              <item>
+               <widget class="QLabel" name="dfHResLabel">
+                <property name="text">
+                 <string>Horizontal Resolution</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="dfHResComboBox">
+                <item>
+                 <property name="text">
+                  <string>640 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>320 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>160 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>80 Pixels</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="dfVResLabel">
+                <property name="text">
+                 <string>Vertical Resolution</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="dfVResComboBox">
+                <item>
+                 <property name="text">
+                  <string>480 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>240 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>120 Pixels</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>60 Pixels</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="trackingControl">
+             <property name="title">
+              <string>Tracking Control</string>
+             </property>
+             <layout class="QVBoxLayout" name="trackingControlLayout">
+              <property name="spacing">
+               <number>3</number>
+              </property>
+              <property name="margin">
+               <number>3</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="trackSelectionButton">
+                <property name="text">
+                 <string>Track Selection</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="clearSelectionButton">
+                <property name="text">
+                 <string>Clear Selection</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+             <zorder>clearSelectionButton</zorder>
+             <zorder>trackSelectionButton</zorder>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="opacityControl">
+             <property name="title">
+              <string>Opacity Control</string>
+             </property>
+             <layout class="QVBoxLayout" name="opacityControlLayout">
+              <item>
+               <widget class="QLabel" name="sendFrameOpacityLabel">
+                <property name="text">
+                 <string>Sent Frame Opacity</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="sentFrameOpacitySpinBox">
+                <property name="accelerated">
+                 <bool>true</bool>
+                </property>
+                <property name="maximum">
+                 <double>1.000000000000000</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.010000000000000</double>
+                </property>
+                <property name="value">
+                 <double>1.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="sentBitmapOpacityLabel">
+                <property name="text">
+                 <string>Sent Bitmap Opacity</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="sentBitmapOpacitySpinBox">
+                <property name="accelerated">
+                 <bool>true</bool>
+                </property>
+                <property name="maximum">
+                 <double>1.000000000000000</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.010000000000000</double>
+                </property>
+                <property name="value">
+                 <double>0.500000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Tracking">
+       <attribute name="title">
+        <string>Tracking</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="trackingTabLayout">
+        <item>
+         <widget class="QGroupBox" name="colorTrackingGroupBox">
+          <property name="title">
+           <string>Color Tracking</string>
+          </property>
+          <layout class="QGridLayout" name="colorTrackingLayout">
+           <item row="2" column="0">
+            <widget class="QPushButton" name="TCStartPushButton">
+             <property name="text">
+              <string>Track Color</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="TCStopPushButton">
+             <property name="text">
+              <string>Stop</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="TWStartPushButton">
+             <property name="text">
+              <string>Track Window</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QPushButton" name="TWStopPushButton">
+             <property name="text">
+              <string>Stop</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="5">
+            <widget class="QGroupBox" name="colorTrackingInformationGB">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Tracking Information</string>
+             </property>
+             <layout class="QGridLayout" name="trackingInformationLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="centroidMXLabel">
+                <property name="text">
+                 <string>Centroid mx</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="centroidMXValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLabel" name="boundingBoxX1Label">
+                <property name="text">
+                 <string>Bounding Box x1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLabel" name="boundingBoxX1Value">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="centroidMYLabel">
+                <property name="text">
+                 <string>Centroid my</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="centroidMYValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLabel" name="boundingBoxY1Label">
+                <property name="text">
+                 <string>Bounding Box y1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLabel" name="boundingBoxY1Value">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="pixelsLabel">
+                <property name="text">
+                 <string>Pixels</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="pixelsValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLabel" name="boundingBoxX2Label">
+                <property name="text">
+                 <string>Bounding Box x2</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLabel" name="boundingBoxX2Value">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="confidenceLabel">
+                <property name="text">
+                 <string>Confidence</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="confidenceValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QLabel" name="boundingBoxY2Label">
+                <property name="text">
+                 <string>Bounding Box y2</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="3">
+               <widget class="QLabel" name="boundingBoxY2Value">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QSpinBox" name="TWRedRangeSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>30</number>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QSpinBox" name="TWGreenRangeSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>30</number>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="4">
+            <widget class="QSpinBox" name="TWBlueRangeSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>30</number>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="TWRedRangeLabel">
+             <property name="text">
+              <string>Red Range</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLabel" name="TWGreenRangeLabel">
+             <property name="text">
+              <string>Green Range</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QLabel" name="TWBlueRangeLabel">
+             <property name="text">
+              <string>Blue Range</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" rowspan="2" colspan="5">
+            <widget class="QGroupBox" name="trackingViewBox">
+             <property name="title">
+              <string>Tracking View</string>
+             </property>
+             <layout class="QHBoxLayout" name="trackingViewBoxLayout">
+              <item>
+               <widget class="QGraphicsView" name="colorTrackingView">
+                <property name="verticalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOff</enum>
+                </property>
+                <property name="horizontalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOff</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="colorStatisticsGroupBox">
+          <property name="title">
+           <string>Color Statistics</string>
+          </property>
+          <layout class="QGridLayout" name="colorStatisticsLayout">
+           <item row="0" column="0" colspan="4">
+            <widget class="QGroupBox" name="statisticsViewBox">
+             <property name="title">
+              <string>Statistics View</string>
+             </property>
+             <layout class="QHBoxLayout" name="statisticsViewBoxLayout">
+              <item>
+               <widget class="QFrame" name="colorStatViewFrame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Sunken</enum>
+                </property>
+                <layout class="QGridLayout" name="colorStatViewLayout">
+                 <property name="margin">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QCustomPlot" name="colorStatisticsView" native="true"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="GMStartPushButton">
+             <property name="text">
+              <string>Get Mean</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="GMStopPushButton">
+             <property name="text">
+              <string>Stop</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="GHChannelLabel">
+             <property name="text">
+              <string>Histogram Channel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLabel" name="GHBinsLabel">
+             <property name="text">
+              <string>Histogram Bins</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="GHStartPushButton">
+             <property name="text">
+              <string>Get Histogram</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="GHStopPushButton">
+             <property name="text">
+              <string>Stop</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QComboBox" name="GHChannelComboBox">
+             <item>
+              <property name="text">
+               <string>Red Channel</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Green Channel</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Blue Channel</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QComboBox" name="GHBinsComboBox">
+             <item>
+              <property name="text">
+               <string>1 Bin</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2 Bins</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>4 Bins</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>8 Bins</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>16 Bins</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>32 Bins</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>64 Bins</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="4">
+            <widget class="QGroupBox" name="colorStatisticsInformationGB">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Statistics Information</string>
+             </property>
+             <layout class="QGridLayout" name="statisticsInformationLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="redMeanLabel">
+                <property name="text">
+                 <string>Red Mean</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="redMeanValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLabel" name="greenMeanLabel">
+                <property name="text">
+                 <string>Green Mean</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLabel" name="greenMeanValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <widget class="QLabel" name="blueMeanLabel">
+                <property name="text">
+                 <string>Blue Mean</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="5">
+               <widget class="QLabel" name="blueMeanValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="redMedianLabel">
+                <property name="text">
+                 <string>Red Median</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="redMedianValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLabel" name="greenMedianLabel">
+                <property name="text">
+                 <string>Green Median</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLabel" name="greenMedianValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="QLabel" name="blueMedianLabel">
+                <property name="text">
+                 <string>Blue Median</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="5">
+               <widget class="QLabel" name="blueMedianValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="redModeLabel">
+                <property name="text">
+                 <string>Red Mode</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="redModeValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLabel" name="greenModeLabel">
+                <property name="text">
+                 <string>Green Mode</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLabel" name="greenModeValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="4">
+               <widget class="QLabel" name="blueModeLabel">
+                <property name="text">
+                 <string>Blue Mode</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="5">
+               <widget class="QLabel" name="blueModeValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="redStdevLabel">
+                <property name="text">
+                 <string>Red Stdev</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="redStdevValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QLabel" name="greenStdevLabel">
+                <property name="text">
+                 <string>Green Stdev</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="3">
+               <widget class="QLabel" name="greenStdevValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="4">
+               <widget class="QLabel" name="blueStdevLabel">
+                <property name="text">
+                 <string>Blue Stdev</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="5">
+               <widget class="QLabel" name="blueStdevValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Options">
+       <attribute name="title">
+        <string>Options</string>
+       </attribute>
+       <layout class="QGridLayout" name="optionsTabLayout">
+        <item row="0" column="0" rowspan="5">
+         <widget class="QGroupBox" name="cameraControlGroupBox">
+          <property name="title">
+           <string>Camera Control</string>
+          </property>
+          <layout class="QVBoxLayout" name="cameraLayout">
+           <item>
+            <widget class="QGroupBox" name="CACGroupBox">
+             <property name="title">
+              <string>Camera Auto Control</string>
+             </property>
+             <layout class="QVBoxLayout" name="cameraAutoLayout">
+              <item>
+               <widget class="QCheckBox" name="agcCheckBox">
+                <property name="text">
+                 <string>Auto Gain Control</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="awbCheckBox">
+                <property name="text">
+                 <string>Auto White Balance</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="hmCheckBox">
+                <property name="text">
+                 <string>Horizontal Mirror</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="vfCheckBox">
+                <property name="text">
+                 <string>Vertical Flip</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="bwCheckBox">
+                <property name="text">
+                 <string>Black And White Mode</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="ngCheckBox">
+                <property name="text">
+                 <string>Negative Mode</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="tmCheckBox">
+                <property name="text">
+                 <string>Test Mode (Color Bars)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="ctCheckBox">
+                <property name="text">
+                 <string>Color Tracking (YCbCr Mode)</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="CMCGroupBox">
+             <property name="title">
+              <string>Camera Manual Control</string>
+             </property>
+             <layout class="QGridLayout" name="cameraManualLayout">
+              <item row="0" column="1">
+               <widget class="QLabel" name="brightnessValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" colspan="2">
+               <widget class="QSlider" name="brightnessSlider">
+                <property name="minimum">
+                 <number>-127</number>
+                </property>
+                <property name="maximum">
+                 <number>127</number>
+                </property>
+                <property name="pageStep">
+                 <number>16</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="tickPosition">
+                 <enum>QSlider::TicksBelow</enum>
+                </property>
+                <property name="tickInterval">
+                 <number>16</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QPushButton" name="brightnessApplyPushButton">
+                <property name="text">
+                 <string>Apply</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QPushButton" name="brightnessResetPushButton">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="contrastLabel">
+                <property name="text">
+                 <string>Contrast</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLabel" name="contrastValue">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0" colspan="2">
+               <widget class="QSlider" name="contrastSlider">
+                <property name="minimum">
+                 <number>-31</number>
+                </property>
+                <property name="maximum">
+                 <number>31</number>
+                </property>
+                <property name="pageStep">
+                 <number>4</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="tickPosition">
+                 <enum>QSlider::TicksBelow</enum>
+                </property>
+                <property name="tickInterval">
+                 <number>4</number>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QPushButton" name="contrastApplyPushButton">
+                <property name="text">
+                 <string>Apply</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QPushButton" name="contrastResetPushButton">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="brightnessLabel">
+                <property name="text">
+                 <string>Brightness</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="RCGroupBox">
+             <property name="title">
+              <string>Register Control</string>
+             </property>
+             <layout class="QGridLayout" name="registerLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="regAddressLabel">
+                <property name="text">
+                 <string>Reg Address</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QSpinBox" name="regAddressSpinBox">
+                <property name="accelerated">
+                 <bool>true</bool>
+                </property>
+                <property name="minimum">
+                 <number>0</number>
+                </property>
+                <property name="maximum">
+                 <number>255</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="regValueLabel">
+                <property name="text">
+                 <string>Reg Value</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QSpinBox" name="regValueSpinBox">
+                <property name="accelerated">
+                 <bool>true</bool>
+                </property>
+                <property name="minimum">
+                 <number>0</number>
+                </property>
+                <property name="maximum">
+                 <number>255</number>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QPushButton" name="regReadPushButton">
+                <property name="text">
+                 <string>Read</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QPushButton" name="regWritePushButton">
+                <property name="text">
+                 <string>Write</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="3" rowspan="5">
+         <widget class="QGroupBox" name="servoControlGroupBox">
+          <property name="title">
+           <string>Servo Control</string>
+          </property>
+          <layout class="QVBoxLayout" name="servoLayout">
+           <item>
+            <widget class="QGroupBox" name="panGroupBox">
+             <property name="title">
+              <string>Pan Servo</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <layout class="QGridLayout" name="panServoLayout">
+              <item row="2" column="1">
+               <widget class="QPushButton" name="panServoApply">
+                <property name="text">
+                 <string>Apply</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QPushButton" name="panServoReset">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" rowspan="3">
+               <widget class="QDial" name="panDial">
+                <property name="minimum">
+                 <number>750</number>
+                </property>
+                <property name="maximum">
+                 <number>2250</number>
+                </property>
+                <property name="pageStep">
+                 <number>50</number>
+                </property>
+                <property name="value">
+                 <number>1500</number>
+                </property>
+                <property name="notchesVisible">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="panValue">
+                <property name="text">
+                 <string>1500</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="tiltGroupBox">
+             <property name="title">
+              <string>Tilt Servo</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <layout class="QGridLayout" name="tiltServoLayout">
+              <item row="2" column="1" rowspan="2">
+               <widget class="QPushButton" name="tiltServoReset">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QPushButton" name="tiltServoApply">
+                <property name="text">
+                 <string>Apply</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" rowspan="4">
+               <widget class="QDial" name="tiltDial">
+                <property name="minimum">
+                 <number>750</number>
+                </property>
+                <property name="maximum">
+                 <number>2250</number>
+                </property>
+                <property name="pageStep">
+                 <number>50</number>
+                </property>
+                <property name="value">
+                 <number>1500</number>
+                </property>
+                <property name="notchesVisible">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="tiltValue">
+                <property name="text">
+                 <string>1500</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="APGroupBox">
+             <property name="title">
+              <string>Automatic Pan Control</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <layout class="QGridLayout" name="automaticPanLayout">
+              <item row="0" column="1" colspan="2">
+               <widget class="QCheckBox" name="APReversedCheckBox">
+                <property name="text">
+                 <string>Reverse PD Control</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="APPGainLabel">
+                <property name="text">
+                 <string>P Gain</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QSpinBox" name="APPGainSpinBox">
+                <property name="accelerated">
+                 <bool>true</bool>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="value">
+                 <number>400</number>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QSpinBox" name="APDGainSpinBox">
+                <property name="accelerated">
+                 <bool>true</bool>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="value">
+                 <number>100</number>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="APDGainLabel">
+                <property name="text">
+                 <string>D Gain</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="2">
+               <widget class="QPushButton" name="APResetPushButton">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QPushButton" name="APApplyPushButton">
+                <property name="text">
+                 <string>Apply</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="ATGroupBox">
+             <property name="title">
+              <string>Automatic Tilt Control</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <layout class="QGridLayout" name="automaticTiltLayout">
+              <item row="0" column="0" colspan="2">
+               <widget class="QCheckBox" name="ATReversedCheckBox">
+                <property name="text">
+                 <string>Reverse PD Control</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="ATPGainLabel">
+                <property name="text">
+                 <string>P Gain</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="ATDGainLabel">
+                <property name="text">
+                 <string>D Gain</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QSpinBox" name="ATPGainSpinBox">
+                <property name="accelerated">
+                 <bool>true</bool>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="value">
+                 <number>400</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QSpinBox" name="ATDGainSpinBox">
+                <property name="accelerated">
+                 <bool>true</bool>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="value">
+                 <number>100</number>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QPushButton" name="ATResetPushButton">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QPushButton" name="ATApplyPushButton">
+                <property name="text">
+                 <string>Apply</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QGroupBox" name="FCGroupBox">
+          <property name="title">
+           <string>Filter Control</string>
+          </property>
+          <layout class="QGridLayout" name="filterLayout">
+           <item row="4" column="2">
+            <widget class="QPushButton" name="noiseFilterResetButton">
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QPushButton" name="noiseFilterApplyButton">
+             <property name="text">
+              <string>Apply</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QSpinBox" name="noiseFilterSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLabel" name="noiseFilterLabel">
+             <property name="text">
+              <string>Noise Filter</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QRadioButton" name="invertedFilterOnButton">
+             <property name="text">
+              <string>Inverted Filter On</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QRadioButton" name="invertedFilterOffButton">
+             <property name="text">
+              <string>Inverted Filter Off</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QGroupBox" name="pinControlGroupBox">
+          <property name="title">
+           <string>Pin Control</string>
+          </property>
+          <layout class="QHBoxLayout" name="pinLayout">
+           <item>
+            <widget class="QGroupBox" name="PPOGroupBox">
+             <property name="title">
+              <string>Pan Pin</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <layout class="QVBoxLayout" name="panPinLayout">
+              <item>
+               <widget class="QRadioButton" name="PPOLowRadioButton">
+                <property name="text">
+                 <string>Low</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="PPOHighRadioButton">
+                <property name="text">
+                 <string>High</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="TPOGroupBox">
+             <property name="title">
+              <string>Tilt Pin</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <layout class="QVBoxLayout" name="tiltPinLayout">
+              <item>
+               <widget class="QRadioButton" name="TPOLowRadioButton">
+                <property name="text">
+                 <string>Low</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="TPOHighRadioButton">
+                <property name="text">
+                 <string>High</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QGroupBox" name="MCGroupBox">
+          <property name="title">
+           <string>Monitor Control (YIQ Output)</string>
+          </property>
+          <layout class="QGridLayout" name="monitorLayout">
+           <item row="1" column="0">
+            <widget class="QRadioButton" name="m1RadioButton">
+             <property name="text">
+              <string>Monitor On</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QRadioButton" name="m0RadioButton">
+             <property name="text">
+              <string>Monitor Off</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="mfCheckBox">
+             <property name="text">
+              <string>Monitor Freeze</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QCheckBox" name="msCheckBox">
+             <property name="text">
+              <string>Monitor Signal (PAL Output)</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QGroupBox" name="LEDCGroupBox">
+          <property name="title">
+           <string>LED Control</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <layout class="QGridLayout" name="LEDLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="LEDFrequencyLabel">
+             <property name="text">
+              <string>LED Frequency</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="LEDFrequencySpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="minimum">
+              <number>-1</number>
+             </property>
+             <property name="maximum">
+              <number>10000000</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="LEDFrequencyReset">
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="LEDFrequencyApply">
+             <property name="text">
+              <string>Apply</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="4" column="1" colspan="2">
+         <widget class="QGroupBox" name="StatusCGroupBox">
+          <property name="title">
+           <string>Status Control</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <layout class="QGridLayout" name="statusLayout">
+           <item row="2" column="0">
+            <widget class="QLabel" name="userButtonDurationLabel">
+             <property name="text">
+              <string>User Button Duration</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="userButtonStateLabel">
+             <property name="text">
+              <string>User Button State</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="userButtonStateValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="panInputLabel">
+             <property name="text">
+              <string>Pan Input</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLabel" name="panInputValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="tiltInputLabel">
+             <property name="text">
+              <string>Tilt Input</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="userButtonPressedLabel">
+             <property name="text">
+              <string>User Button Pressed</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="userButtonDurationValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLabel" name="tiltInputValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLabel" name="userButtonPressedValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QLabel" name="panServoPositionValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLabel" name="panServoPositionLabel">
+             <property name="text">
+              <string>Pan Servo Position</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QLabel" name="tiltServoPositionLabel">
+             <property name="text">
+              <string>Tilt Servo Position</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="userButtonReleasedLabel">
+             <property name="text">
+              <string>User Button Released</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLabel" name="userButtonReleasedValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3">
+            <widget class="QLabel" name="tiltServoPositionValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QGroupBox" name="ModeCGroupBox">
+          <property name="title">
+           <string>Mode Control</string>
+          </property>
+          <layout class="QVBoxLayout" name="modeLayout">
+           <item>
+            <widget class="QCheckBox" name="pollModeCheckBox">
+             <property name="text">
+              <string>Poll Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="switchingModeCheckBox">
+             <property name="text">
+              <string>Switching Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="lineModeCheckBox">
+             <property name="text">
+              <string>Line Mode</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="histogramTrackingCheckBox">
+             <property name="text">
+              <string>Histogram Tracking</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QGroupBox" name="trackingWindowGroupBox">
+          <property name="title">
+           <string>Tracking Window</string>
+          </property>
+          <layout class="QGridLayout" name="trackingWindowLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="xMinLabel">
+             <property name="text">
+              <string>X Min</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="xMinSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>159</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="yMinLabel">
+             <property name="text">
+              <string>Y Min</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="yMinSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>119</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="xMaxLabel">
+             <property name="text">
+              <string>X Max</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="yMaxLabel">
+             <property name="text">
+              <string>Y Max</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QSpinBox" name="xMaxSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>159</number>
+             </property>
+             <property name="value">
+              <number>159</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QSpinBox" name="yMaxSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>119</number>
+             </property>
+             <property name="value">
+              <number>119</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QPushButton" name="twApplyPushButton">
+             <property name="text">
+              <string>Apply</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QPushButton" name="twResetPushButton">
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="5">
+            <widget class="QPushButton" name="twRefreshPushButton">
+             <property name="text">
+              <string>Refresh Tracking Window</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QGroupBox" name="trackingParametersGroupBox">
+          <property name="title">
+           <string>Tracking Parameters</string>
+          </property>
+          <layout class="QGridLayout" name="trackingParametersLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="redMinLabel">
+             <property name="text">
+              <string>Red Min</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="redMinSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="redMaxLabel">
+             <property name="text">
+              <string>Red Max</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="redMaxSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>255</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="greenMinLabel">
+             <property name="text">
+              <string>Green Min</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="greenMaxLabel">
+             <property name="text">
+              <string>Green Max</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QSpinBox" name="greenMinSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QSpinBox" name="greenMaxSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>255</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="blueMinLabel">
+             <property name="text">
+              <string>Blue Min</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QLabel" name="blueMaxLabel">
+             <property name="text">
+              <string>Blue Max</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QSpinBox" name="blueMinSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QSpinBox" name="blueMaxSpinBox">
+             <property name="accelerated">
+              <bool>true</bool>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>255</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QPushButton" name="tpApplyPushButton">
+             <property name="text">
+              <string>Apply</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="6">
+            <widget class="QPushButton" name="tpResetPushButton">
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="7">
+            <widget class="QPushButton" name="tpRefreshPushButton">
+             <property name="text">
+              <string>Refresh Tracking Parameters</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Disk">
+       <attribute name="title">
+        <string>Disk</string>
+       </attribute>
+       <layout class="QGridLayout" name="diskTabLayout">
+        <item row="0" column="0" rowspan="6">
+         <widget class="QTreeWidget" name="diskView">
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Size</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Attributes</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="3">
+         <widget class="QGroupBox" name="fileExplorerBox">
+          <property name="title">
+           <string>File Explorer</string>
+          </property>
+          <layout class="QVBoxLayout" name="fileExplorerLayout">
+           <item>
+            <widget class="QGroupBox" name="selectedItemBox">
+             <property name="title">
+              <string>Selected Item</string>
+             </property>
+             <layout class="QVBoxLayout" name="selectedItemLayout">
+              <item>
+               <widget class="QGroupBox" name="nameBox">
+                <property name="title">
+                 <string>Name</string>
+                </property>
+                <layout class="QGridLayout" name="nameLayout">
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="entryNameEdit">
+                   <property name="maxLength">
+                    <number>245</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0" colspan="2">
+                  <widget class="QPushButton" name="MVPushButton">
+                   <property name="text">
+                    <string>Rename</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="entryNameLabel">
+                   <property name="text">
+                    <string>Entry Name</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="attributesBox">
+                <property name="title">
+                 <string>Attributes</string>
+                </property>
+                <layout class="QGridLayout" name="attributesLayout">
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="readOnlyCheckBox">
+                   <property name="text">
+                    <string>Read Only</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QCheckBox" name="hiddenCheckBox">
+                   <property name="text">
+                    <string>Hidden</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QCheckBox" name="systemCheckBox">
+                   <property name="text">
+                    <string>System</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QCheckBox" name="archiveCheckBox">
+                   <property name="text">
+                    <string>Archive</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="CDPRPushButton">
+                <property name="text">
+                 <string>Open</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="RMPushButton">
+                <property name="text">
+                 <string>Delete</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="LSPushButton">
+             <property name="text">
+              <string>Refresh</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="1" rowspan="2">
+         <widget class="QGroupBox" name="newFileBox">
+          <property name="title">
+           <string>New File</string>
+          </property>
+          <layout class="QGridLayout" name="newFileLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="newFileNameLabel">
+             <property name="text">
+              <string>File Name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="newFileNameEdit">
+             <property name="maxLength">
+              <number>245</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="newTextToAppendLabel">
+             <property name="text">
+              <string>Text to Append</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="newTextToAppendEdit">
+             <property name="maxLength">
+              <number>245</number>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QPushButton" name="PLPushButton">
+             <property name="text">
+              <string>Create</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QGroupBox" name="newFolderBox">
+          <property name="title">
+           <string>New Folder</string>
+          </property>
+          <layout class="QGridLayout" name="newFolderLayout">
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="newFolderNameEdit">
+             <property name="maxLength">
+              <number>245</number>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QPushButton" name="MKPushButton">
+             <property name="text">
+              <string>Create</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="newFolderNameLabel">
+             <property name="text">
+              <string>Folder Name</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QGroupBox" name="diskControl">
+          <property name="title">
+           <string>Disk Control</string>
+          </property>
+          <layout class="QVBoxLayout" name="diskControlLayout">
+           <item>
+            <widget class="QPushButton" name="FMPushButton">
+             <property name="text">
+              <string>Format Disk</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="UMPushButton">
+             <property name="text">
+              <string>Unmount Disk</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="2" rowspan="2">
+         <widget class="QGroupBox" name="DSGroupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Disk Space</string>
+          </property>
+          <layout class="QGridLayout" name="diskSpaceLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="freeSectorCountLabel">
+             <property name="text">
+              <string>Free Sector Count</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="usedSectorCountLabel">
+             <property name="text">
+              <string>Used Sector Count</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="freeSectorCountValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="usedSectorCountValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QPushButton" name="DSRefreshButton">
+             <property name="text">
+              <string>Refresh</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2" rowspan="3">
+         <widget class="QGroupBox" name="DIGroupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Disk Information</string>
+          </property>
+          <layout class="QGridLayout" name="diskInformationLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="volumeLabelLabel">
+             <property name="text">
+              <string>Volume Label</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="fileSystemTypeLabel">
+             <property name="text">
+              <string>File System Type</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="diskSignatureLabel">
+             <property name="text">
+              <string>Disk Signature</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="volumeIdentificationLabel">
+             <property name="text">
+              <string>Volume Identification</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLabel" name="countOfDataSectorsLabel">
+             <property name="text">
+              <string>Count of Data Sectors</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLabel" name="sectorsPerClusterLabel">
+             <property name="text">
+              <string>Sectors per Cluster</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="0">
+            <widget class="QLabel" name="bytesPerSectorLabel">
+             <property name="text">
+              <string>Bytes per Sector</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0">
+            <widget class="QLabel" name="countOfClustersLabel">
+             <property name="text">
+              <string>Count of Clusters</string>
+             </property>
+            </widget>
+           </item>
+           <item row="16" column="0" colspan="2">
+            <widget class="QPushButton" name="DIRefreshButton">
+             <property name="text">
+              <string>Refresh</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="volumeLabelValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="fileSystemTypeValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLabel" name="diskSignatureValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLabel" name="volumeIdentificationValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLabel" name="countOfDataSectorsValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="1">
+            <widget class="QLabel" name="sectorsPerClusterValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="1">
+            <widget class="QLabel" name="bytesPerSectorValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="1">
+            <widget class="QLabel" name="countOfClustersValue">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="MenuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1035</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_Frame"/>
+    <addaction name="actionSave_Bitmap"/>
+    <addaction name="separator"/>
+    <addaction name="actionClear_Frame"/>
+    <addaction name="actionClear_Bitmap"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionCMUcam4_Documents"/>
+    <addaction name="actionCMUcam4_Wiki"/>
+    <addaction name="actionCMUcam4_Forums"/>
+    <addaction name="actionCMUcam4_Files"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_CMUcam4GUI"/>
+    <addaction name="actionAbout_Qt"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="ToolBar">
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionBegin"/>
+   <addaction name="actionEnd"/>
+   <addaction name="separator"/>
+   <addaction name="actionSleep_Lightly"/>
+   <addaction name="actionSleep_Deeply"/>
+   <addaction name="separator"/>
+   <addaction name="actionSend_Frame"/>
+   <addaction name="actionSend_Bitmap"/>
+   <addaction name="actionDump_Frame"/>
+   <addaction name="actionDump_Bitmap"/>
+  </widget>
+  <widget class="QStatusBar" name="StatusBar"/>
+  <action name="actionBegin">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/begin.png</normaloff>:/Icons/begin.png</iconset>
+   </property>
+   <property name="text">
+    <string>Begin</string>
+   </property>
+  </action>
+  <action name="actionEnd">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/end.png</normaloff>:/Icons/end.png</iconset>
+   </property>
+   <property name="text">
+    <string>End</string>
+   </property>
+  </action>
+  <action name="actionSleep_Lightly">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/sleepLightly.png</normaloff>:/Icons/sleepLightly.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sleep Lightly</string>
+   </property>
+  </action>
+  <action name="actionSleep_Deeply">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/sleepDeeply.png</normaloff>:/Icons/sleepDeeply.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sleep Deeply</string>
+   </property>
+  </action>
+  <action name="actionSend_Frame">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/sendFrame.png</normaloff>:/Icons/sendFrame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Send Frame</string>
+   </property>
+  </action>
+  <action name="actionSend_Bitmap">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/sendBitmap.png</normaloff>:/Icons/sendBitmap.png</iconset>
+   </property>
+   <property name="text">
+    <string>Send Bitmap</string>
+   </property>
+  </action>
+  <action name="actionDump_Frame">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/dumpFrame.png</normaloff>:/Icons/dumpFrame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Dump Frame</string>
+   </property>
+  </action>
+  <action name="actionDump_Bitmap">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/dumpBitmap.png</normaloff>:/Icons/dumpBitmap.png</iconset>
+   </property>
+   <property name="text">
+    <string>Dump Bitmap</string>
+   </property>
+  </action>
+  <action name="actionCMUcam4_Documents">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/help.png</normaloff>:/Icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>CMUcam4 Documents</string>
+   </property>
+  </action>
+  <action name="actionCMUcam4_Wiki">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/help.png</normaloff>:/Icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>CMUcam4 Wiki</string>
+   </property>
+  </action>
+  <action name="actionCMUcam4_Forums">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/help.png</normaloff>:/Icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>CMUcam4 Forums</string>
+   </property>
+  </action>
+  <action name="actionCMUcam4_Files">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/help.png</normaloff>:/Icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>CMUcam4 Files</string>
+   </property>
+  </action>
+  <action name="actionAbout_CMUcam4GUI">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/CMUcamLogo.png</normaloff>:/Icons/CMUcamLogo.png</iconset>
+   </property>
+   <property name="text">
+    <string>About CMUcam4GUI</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/QtLogo.png</normaloff>:/Icons/QtLogo.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/open.png</normaloff>:/Icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave_Frame">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/saveFrame.png</normaloff>:/Icons/saveFrame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Frame</string>
+   </property>
+  </action>
+  <action name="actionSave_Bitmap">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/saveBitmap.png</normaloff>:/Icons/saveBitmap.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Bitmap</string>
+   </property>
+  </action>
+  <action name="actionClear_Frame">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/clearFrame.png</normaloff>:/Icons/clearFrame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear Frame</string>
+   </property>
+  </action>
+  <action name="actionClear_Bitmap">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/clearBitmap.png</normaloff>:/Icons/clearBitmap.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear Bitmap</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="CMUcam4GUI.qrc">
+     <normaloff>:/Icons/exit.png</normaloff>:/Icons/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>QCustomPlot/qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>imageView</tabstop>
+  <tabstop>sfHResComboBox</tabstop>
+  <tabstop>sfVResComboBox</tabstop>
+  <tabstop>dfHResComboBox</tabstop>
+  <tabstop>dfVResComboBox</tabstop>
+  <tabstop>sentFrameOpacitySpinBox</tabstop>
+  <tabstop>sentBitmapOpacitySpinBox</tabstop>
+  <tabstop>trackSelectionButton</tabstop>
+  <tabstop>clearSelectionButton</tabstop>
+  <tabstop>colorTrackingView</tabstop>
+  <tabstop>TCStartPushButton</tabstop>
+  <tabstop>TCStopPushButton</tabstop>
+  <tabstop>TWStartPushButton</tabstop>
+  <tabstop>TWStopPushButton</tabstop>
+  <tabstop>TWRedRangeSpinBox</tabstop>
+  <tabstop>TWGreenRangeSpinBox</tabstop>
+  <tabstop>TWBlueRangeSpinBox</tabstop>
+  <tabstop>GMStartPushButton</tabstop>
+  <tabstop>GMStopPushButton</tabstop>
+  <tabstop>GHStartPushButton</tabstop>
+  <tabstop>GHStopPushButton</tabstop>
+  <tabstop>GHChannelComboBox</tabstop>
+  <tabstop>GHBinsComboBox</tabstop>
+  <tabstop>agcCheckBox</tabstop>
+  <tabstop>awbCheckBox</tabstop>
+  <tabstop>hmCheckBox</tabstop>
+  <tabstop>vfCheckBox</tabstop>
+  <tabstop>bwCheckBox</tabstop>
+  <tabstop>ngCheckBox</tabstop>
+  <tabstop>tmCheckBox</tabstop>
+  <tabstop>ctCheckBox</tabstop>
+  <tabstop>brightnessSlider</tabstop>
+  <tabstop>brightnessApplyPushButton</tabstop>
+  <tabstop>brightnessResetPushButton</tabstop>
+  <tabstop>contrastSlider</tabstop>
+  <tabstop>contrastApplyPushButton</tabstop>
+  <tabstop>contrastResetPushButton</tabstop>
+  <tabstop>regAddressSpinBox</tabstop>
+  <tabstop>regValueSpinBox</tabstop>
+  <tabstop>regReadPushButton</tabstop>
+  <tabstop>regWritePushButton</tabstop>
+  <tabstop>redMinSpinBox</tabstop>
+  <tabstop>greenMinSpinBox</tabstop>
+  <tabstop>blueMinSpinBox</tabstop>
+  <tabstop>redMaxSpinBox</tabstop>
+  <tabstop>greenMaxSpinBox</tabstop>
+  <tabstop>blueMaxSpinBox</tabstop>
+  <tabstop>tpApplyPushButton</tabstop>
+  <tabstop>tpResetPushButton</tabstop>
+  <tabstop>tpRefreshPushButton</tabstop>
+  <tabstop>xMinSpinBox</tabstop>
+  <tabstop>yMinSpinBox</tabstop>
+  <tabstop>xMaxSpinBox</tabstop>
+  <tabstop>yMaxSpinBox</tabstop>
+  <tabstop>twApplyPushButton</tabstop>
+  <tabstop>twResetPushButton</tabstop>
+  <tabstop>twRefreshPushButton</tabstop>
+  <tabstop>pollModeCheckBox</tabstop>
+  <tabstop>switchingModeCheckBox</tabstop>
+  <tabstop>lineModeCheckBox</tabstop>
+  <tabstop>histogramTrackingCheckBox</tabstop>
+  <tabstop>invertedFilterOffButton</tabstop>
+  <tabstop>invertedFilterOnButton</tabstop>
+  <tabstop>noiseFilterSpinBox</tabstop>
+  <tabstop>noiseFilterApplyButton</tabstop>
+  <tabstop>noiseFilterResetButton</tabstop>
+  <tabstop>PPOGroupBox</tabstop>
+  <tabstop>PPOLowRadioButton</tabstop>
+  <tabstop>PPOHighRadioButton</tabstop>
+  <tabstop>TPOGroupBox</tabstop>
+  <tabstop>TPOLowRadioButton</tabstop>
+  <tabstop>TPOHighRadioButton</tabstop>
+  <tabstop>m0RadioButton</tabstop>
+  <tabstop>m1RadioButton</tabstop>
+  <tabstop>mfCheckBox</tabstop>
+  <tabstop>msCheckBox</tabstop>
+  <tabstop>LEDCGroupBox</tabstop>
+  <tabstop>LEDFrequencySpinBox</tabstop>
+  <tabstop>LEDFrequencyApply</tabstop>
+  <tabstop>LEDFrequencyReset</tabstop>
+  <tabstop>StatusCGroupBox</tabstop>
+  <tabstop>panGroupBox</tabstop>
+  <tabstop>panDial</tabstop>
+  <tabstop>panServoApply</tabstop>
+  <tabstop>panServoReset</tabstop>
+  <tabstop>tiltGroupBox</tabstop>
+  <tabstop>tiltDial</tabstop>
+  <tabstop>tiltServoApply</tabstop>
+  <tabstop>tiltServoReset</tabstop>
+  <tabstop>APGroupBox</tabstop>
+  <tabstop>APReversedCheckBox</tabstop>
+  <tabstop>APPGainSpinBox</tabstop>
+  <tabstop>APDGainSpinBox</tabstop>
+  <tabstop>APApplyPushButton</tabstop>
+  <tabstop>APResetPushButton</tabstop>
+  <tabstop>ATGroupBox</tabstop>
+  <tabstop>ATReversedCheckBox</tabstop>
+  <tabstop>ATPGainSpinBox</tabstop>
+  <tabstop>ATDGainSpinBox</tabstop>
+  <tabstop>ATApplyPushButton</tabstop>
+  <tabstop>ATResetPushButton</tabstop>
+  <tabstop>diskView</tabstop>
+  <tabstop>entryNameEdit</tabstop>
+  <tabstop>MVPushButton</tabstop>
+  <tabstop>readOnlyCheckBox</tabstop>
+  <tabstop>archiveCheckBox</tabstop>
+  <tabstop>hiddenCheckBox</tabstop>
+  <tabstop>systemCheckBox</tabstop>
+  <tabstop>CDPRPushButton</tabstop>
+  <tabstop>RMPushButton</tabstop>
+  <tabstop>LSPushButton</tabstop>
+  <tabstop>newFileNameEdit</tabstop>
+  <tabstop>newTextToAppendEdit</tabstop>
+  <tabstop>PLPushButton</tabstop>
+  <tabstop>newFolderNameEdit</tabstop>
+  <tabstop>MKPushButton</tabstop>
+  <tabstop>DIRefreshButton</tabstop>
+  <tabstop>DSRefreshButton</tabstop>
+  <tabstop>FMPushButton</tabstop>
+  <tabstop>UMPushButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="CMUcam4GUI.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionBegin</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>begin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEnd</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>end()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSleep_Lightly</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sleepLightly()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSleep_Deeply</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sleepDeeply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDump_Bitmap</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>dumpBitmap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDump_Frame</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>dumpFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSend_Bitmap</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sendBitmap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSend_Frame</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sendFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionClear_Bitmap</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>clearBitmap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionClear_Frame</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>clearFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave_Bitmap</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>saveBitmap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave_Frame</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>saveFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sentFrameOpacitySpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sentFrameOpacity(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>865</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sentBitmapOpacitySpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sentBitmapOpacity(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>865</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>trackSelectionButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>trackSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>865</x>
+     <y>581</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearSelectionButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>clearSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>865</x>
+     <y>624</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>agcCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticGainControl()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>awbCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticWhiteBalance()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hmCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>horizontalMirror()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>197</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vfCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>verticalFlip()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bwCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>blackAndWhiteMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ngCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>negativeMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>269</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tmCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>testMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>293</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ctCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>colorTracking()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>317</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>brightnessApplyPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>brightnessApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>425</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>brightnessResetPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>brightnessReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>425</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>brightnessSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>brightnessValue</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>397</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>contrastApplyPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>contrastApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>500</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>contrastResetPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>contrastReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>500</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>contrastSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>contrastValue</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>472</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>panGroupBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>panDialEnable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>787</x>
+     <y>178</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>panServoApply</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>panDialApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>828</x>
+     <y>188</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>panServoReset</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>panDialReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>828</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>panDial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>panValue</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>747</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>828</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tiltGroupBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>tiltDialEnable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>787</x>
+     <y>307</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tiltServoApply</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>tiltDialApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>828</x>
+     <y>305</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tiltServoReset</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>tiltDialReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>828</x>
+     <y>340</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tiltDial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>tiltValue</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>747</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>828</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tpApplyPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setTrackingParametersApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>633</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tpResetPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setTrackingParametersReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>633</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tpRefreshPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getTrackingParameters()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>456</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>twApplyPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setTrackingWindowApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>449</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>twResetPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setTrackingWindowReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>449</x>
+     <y>283</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>twRefreshPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getTrackingWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>364</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m0RadioButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>monitorOff()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>282</x>
+     <y>499</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m1RadioButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>monitorOn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>282</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mfCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>monitorFreeze()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>408</x>
+     <y>499</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>msCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>monitorSignal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>408</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>APGroupBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticPan()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>787</x>
+     <y>442</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>APReversedCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticPanReversed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>787</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>APApplyPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticPanApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>747</x>
+     <y>487</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>APResetPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticPanReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>828</x>
+     <y>487</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ATGroupBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticTilt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>787</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ATReversedCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticTiltReversed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>787</x>
+     <y>548</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ATApplyPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticTiltApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>747</x>
+     <y>627</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ATResetPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>automaticPanReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>828</x>
+     <y>627</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PPOGroupBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>panPinOutput()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>552</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PPOLowRadioButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>panPinLow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>552</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PPOHighRadioButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>panPinHigh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>552</x>
+     <y>426</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TPOGroupBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>tiltPinOutput()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>633</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TPOLowRadioButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>tiltPinLow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>633</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TPOHighRadioButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>tiltPinHigh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>633</x>
+     <y>426</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LEDCGroupBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>LEDPower()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>592</x>
+     <y>506</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LEDFrequencyApply</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>LEDFrequencyApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>552</x>
+     <y>525</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LEDFrequencyReset</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>LEDFrequencyReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>633</x>
+     <y>525</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>invertedFilterOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>invertedFilter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>invertedFilterOnButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>invertedFilter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>427</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>noiseFilterApplyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>noiseFilterApply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>noiseFilterResetButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>noiseFilterReset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>427</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pollModeCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pollMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>592</x>
+     <y>247</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>switchingModeCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>switchingMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>592</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineModeCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>lineMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>592</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>histogramTrackingCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>histogramTracking()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>592</x>
+     <y>319</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>regReadPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>registerRead()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>622</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>regWritePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>registerWrite()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>622</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>StatusCGroupBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>statusEnable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>456</x>
+     <y>608</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TCStartPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>trackColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>69</x>
+     <y>498</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TCStopPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>idleCamera()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>498</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TWStartPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>trackWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>69</x>
+     <y>527</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TWStopPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>idleCamera()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>527</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GMStartPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getMean()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>498</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GMStopPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>idleCamera()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>617</x>
+     <y>498</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GHStartPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getHistogram()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>527</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GHStopPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>idleCamera()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>617</x>
+     <y>527</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DIRefreshButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>diskInformation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>745</x>
+     <y>394</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DSRefreshButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>diskSpace()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>745</x>
+     <y>545</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FMPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>formatDisk()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>745</x>
+     <y>609</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UMPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>unmountDisk()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>745</x>
+     <y>638</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diskView</sender>
+   <signal>itemActivated(QTreeWidgetItem*,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>itemActivated(QTreeWidgetItem*,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>diskView</sender>
+   <signal>currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LSPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>listDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>394</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CDPRPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>itemActivated()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RMPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>removeEntry()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>354</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MVPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>moveEntry()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>202</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>readOnlyCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeAttributes()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>263</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hiddenCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeAttributes()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>systemCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeAttributes()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>510</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>archiveCheckBox</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeAttributes()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>510</x>
+     <y>263</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PLPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>printLine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>534</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MKPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>makeDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>637</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCMUcam4_Documents</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>documentsHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCMUcam4_Wiki</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>wikiHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCMUcam4_Forums</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>forumsHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCMUcam4_Files</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>filesHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbout_CMUcam4GUI</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>aboutCMUcam4GUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbout_Qt</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>aboutQt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>begin()</slot>
+  <slot>end()</slot>
+  <slot>sleepLightly()</slot>
+  <slot>sleepDeeply()</slot>
+  <slot>dumpBitmap()</slot>
+  <slot>dumpFrame()</slot>
+  <slot>sendBitmap()</slot>
+  <slot>sendFrame()</slot>
+  <slot>open()</slot>
+  <slot>clearBitmap()</slot>
+  <slot>clearFrame()</slot>
+  <slot>saveBitmap()</slot>
+  <slot>saveFrame()</slot>
+  <slot>sentBitmapOpacity(double)</slot>
+  <slot>sentFrameOpacity(double)</slot>
+  <slot>trackSelection()</slot>
+  <slot>clearSelection()</slot>
+  <slot>changedSelection()</slot>
+  <slot>automaticGainControl()</slot>
+  <slot>automaticWhiteBalance()</slot>
+  <slot>horizontalMirror()</slot>
+  <slot>verticalFlip()</slot>
+  <slot>blackAndWhiteMode()</slot>
+  <slot>negativeMode()</slot>
+  <slot>testMode()</slot>
+  <slot>colorTracking()</slot>
+  <slot>brightnessApply()</slot>
+  <slot>brightnessReset()</slot>
+  <slot>contrastApply()</slot>
+  <slot>contrastReset()</slot>
+  <slot>panDialEnable()</slot>
+  <slot>panDialApply()</slot>
+  <slot>panDialReset()</slot>
+  <slot>tiltDialEnable()</slot>
+  <slot>tiltDialApply()</slot>
+  <slot>tiltDialReset()</slot>
+  <slot>setTrackingParametersApply()</slot>
+  <slot>setTrackingParametersReset()</slot>
+  <slot>getTrackingParameters()</slot>
+  <slot>setTrackingWindowApply()</slot>
+  <slot>setTrackingWindowReset()</slot>
+  <slot>getTrackingWindow()</slot>
+  <slot>monitorOff()</slot>
+  <slot>monitorOn()</slot>
+  <slot>monitorFreeze()</slot>
+  <slot>monitorSignal()</slot>
+  <slot>automaticPan()</slot>
+  <slot>automaticPanReversed()</slot>
+  <slot>automaticPanApply()</slot>
+  <slot>automaticPanReset()</slot>
+  <slot>automaticTilt()</slot>
+  <slot>automaticTiltReversed()</slot>
+  <slot>automaticTiltApply()</slot>
+  <slot>automaticTiltReset()</slot>
+  <slot>panPinOutput()</slot>
+  <slot>panPinLow()</slot>
+  <slot>panPinHigh()</slot>
+  <slot>tiltPinOutput()</slot>
+  <slot>tiltPinLow()</slot>
+  <slot>tiltPinHigh()</slot>
+  <slot>LEDPower()</slot>
+  <slot>LEDFrequencyApply()</slot>
+  <slot>LEDFrequencyReset()</slot>
+  <slot>invertedFilter()</slot>
+  <slot>noiseFilterApply()</slot>
+  <slot>noiseFilterReset()</slot>
+  <slot>pollMode()</slot>
+  <slot>switchingMode()</slot>
+  <slot>lineMode()</slot>
+  <slot>histogramTracking()</slot>
+  <slot>registerRead()</slot>
+  <slot>registerWrite()</slot>
+  <slot>statusEnable()</slot>
+  <slot>statusUpdate()</slot>
+  <slot>trackColor()</slot>
+  <slot>trackWindow()</slot>
+  <slot>getMean()</slot>
+  <slot>getHistogram()</slot>
+  <slot>idleCamera()</slot>
+  <slot>getTypeDataPacket()</slot>
+  <slot>diskInformation()</slot>
+  <slot>diskSpace()</slot>
+  <slot>formatDisk()</slot>
+  <slot>unmountDisk()</slot>
+  <slot>itemActivated()</slot>
+  <slot>itemActivated(QTreeWidgetItem*,int)</slot>
+  <slot>currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)</slot>
+  <slot>removeEntry()</slot>
+  <slot>moveEntry()</slot>
+  <slot>changeAttributes()</slot>
+  <slot>listDirectory()</slot>
+  <slot>changeDirectory(QTreeWidgetItem*)</slot>
+  <slot>filePrint(QTreeWidgetItem*)</slot>
+  <slot>removeEntry(QTreeWidgetItem*)</slot>
+  <slot>moveEntry(QTreeWidgetItem*)</slot>
+  <slot>changeAttributes(QTreeWidgetItem*)</slot>
+  <slot>printLine()</slot>
+  <slot>makeDirectory()</slot>
+  <slot>documentsHelp()</slot>
+  <slot>wikiHelp()</slot>
+  <slot>forumsHelp()</slot>
+  <slot>filesHelp()</slot>
+  <slot>aboutCMUcam4GUI()</slot>
+  <slot>aboutQt()</slot>
+ </slots>
+</ui>

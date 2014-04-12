@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Icons/begin.png</file>
+        <file>Icons/end.png</file>
+        <file>Icons/sleepLightly.png</file>
+        <file>Icons/sleepDeeply.png</file>
+        <file>Icons/sendFrame.png</file>
+        <file>Icons/sendBitmap.png</file>
+        <file>Icons/dumpFrame.png</file>
+        <file>Icons/dumpBitmap.png</file>
+        <file>Icons/saveFrame.png</file>
+        <file>Icons/saveBitmap.png</file>
+        <file>Icons/clearFrame.png</file>
+        <file>Icons/clearBitmap.png</file>
+        <file>Icons/open.png</file>
+        <file>Icons/exit.png</file>
+        <file>Icons/help.png</file>
+        <file>Icons/CMUcamLogo.png</file>
+        <file>Icons/QtLogo.png</file>
+    </qresource>
+</RCC>

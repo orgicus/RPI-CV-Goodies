@@ -1,0 +1,19 @@
+QCustomPlot Bugfix release 13.01.2013
+Only use this bugfix release, if you are affected by the bugs listed below. The next official release will also contain these fixes, of course.
+
+Fixes:
+  - Manual ticks may exceed axis boundary under certain conditions
+  - Rotated tick labels being clipped as if they were non-rotated (i.e. too early, before actually touching the widget border)
+  - The legend icon of graphs/curves using pixmaps as scatter points that were smaller than the legend icon rect was not drawn correctly
+
+By:
+  - Replaced QCPAxis::visibleTickBounds by version of commit 02ca3ba
+  - Replaced QCPAxis::setupTickVectors by version of commit 02ca3ba
+  - Replaced QCPAxis::drawTickLabel by version of commit 02ca3ba
+  - Replaced QCPAxis::getMaxTickLabelSize by version of commit 02ca3ba, excluding parts responsible for cached labels
+  - Included protected struct QCPAxis::TickLabelData from commit 02ca3ba
+  - Included QCPAxis::placeTickLabel from commit 02ca3ba, excluding parts responsible for cached labels
+  - Included QCPAxis::getTickLabelData from commit 02ca3ba
+  - Included QCPAxis::getTickLabelDrawOffset from commit 02ca3ba
+  - Replaced QCPGraph::drawLegendIcon by version of commit 02ca3ba
+  - Replaced QCPCurve::drawLegendIcon by version of commit 02ca3ba
